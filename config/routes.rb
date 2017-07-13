@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'rides/new'
+
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
-
+  resources :attractions
   resources :users
   root 'welcome#index'
 end
